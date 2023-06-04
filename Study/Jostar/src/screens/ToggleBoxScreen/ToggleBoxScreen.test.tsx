@@ -1,8 +1,8 @@
 import { render, fireEvent, waitFor } from "@testing-library/react-native";
-import MessageScreen from "./MessageScreen";
+import ToggleBoxScreen from "./ToggleBoxScreen";
 
 const initRender = () => {
-  return render(<MessageScreen/>);
+  return render(<ToggleBoxScreen/>);
 };
 
 describe("스크린/메시지스크린", () => {

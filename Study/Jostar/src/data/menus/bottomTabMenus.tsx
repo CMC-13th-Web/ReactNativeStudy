@@ -1,12 +1,12 @@
 import { BottomMenus } from "constants/menus";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import AntDesignIcon from "react-native-vector-icons/AntDesign";
+import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import NotificationScreen from "screens/NotificationScreen/NotificationScreen";
+import CountScreen from "screens/NotificationScreen/CountScreen";
 import HomeScreen from "screens/HomeScreen/HomeScreen";
-import MessageScreen from "screens/MessageScreen/MessageScreen";
-import SearchScreen from "screens/SearchScreen/SearchScreen";
+import ToggleBoxScreen from "screens/ToggleBoxScreen/ToggleBoxScreen";
+import KakaoLoginScreen from "screens/KakaoLoginScreen/KakaoLoginScreen";
 import { BottomTabMenu } from "types/apps/menu";
 
 export const bottomTabMenu: BottomTabMenu[] = [
@@ -17,21 +17,21 @@ export const bottomTabMenu: BottomTabMenu[] = [
     tabBarIcon: <EntypoIcon size={20} name="home" />,
   },
   {
-    name: BottomMenus.Notification,
-    component: NotificationScreen,
-    tabBarLabel: "알림",
-    tabBarIcon: <Ionicons size={20} name="notifications" />,
+    name: BottomMenus.Count,
+    component: CountScreen,
+    tabBarLabel: "카운터",
+    tabBarIcon: <MaterialCommunityIcons size={20} name="axis-x-rotate-counterclockwise" />,
   },
   {
-    name: BottomMenus.Search,
-    component: SearchScreen,
-    tabBarLabel: "검색",
-    tabBarIcon: <AntDesignIcon size={20} name="search1" />,
+    name: BottomMenus.KakaoLogin,
+    component: KakaoLoginScreen,
+    tabBarLabel: "카카오 로그인",
+    tabBarIcon: <MaterialCommunityIcons size={20} name="phone-in-talk" />,
   },
   {
-    name: BottomMenus.Message,
-    component: MessageScreen,
-    tabBarLabel: "메시지",
-    tabBarIcon: <MaterialCommunityIcons size={20} name="message-text-outline" />,
+    name: BottomMenus.ToggleBox,
+    component: ToggleBoxScreen,
+    tabBarLabel: "토글박스",
+    tabBarIcon: <FeatherIcon size={20} name="toggle-left" />,
   },
 ];

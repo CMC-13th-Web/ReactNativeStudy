@@ -1,14 +1,14 @@
 import CounterCard from 'components/molecules/cards/CounterCard/CounterCard';
 import React from 'react';
 import { View } from 'react-native';
-import { notificationScreenStyles } from './NotificationScreen.style';
+import { countScreenStyles } from './CountScreen.style';
 
-const NotificationScreen = () => {
+const CountScreen = () => {
   return (
-    <View style={notificationScreenStyles.container}>
+    <View style={countScreenStyles.container}>
       <CounterCard/>
     </View>
   );
 };
 
-export default NotificationScreen;
+export default CountScreen;

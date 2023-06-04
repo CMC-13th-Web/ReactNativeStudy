@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { mixinStyles } from "styles/mixinStyle";
 
-export const notificationScreenStyles = StyleSheet.create({
+export const toggleBoxScreenStyles = StyleSheet.create({
   container: {
     ...mixinStyles.container
   }

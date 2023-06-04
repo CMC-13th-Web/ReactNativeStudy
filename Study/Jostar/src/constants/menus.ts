@@ -1,8 +1,8 @@
 enum BottomMenus {
   Home = "Home",
-  Notification = "Notification",
-  Message = "Message",
-  Search = "Search"
+  Count = "Count",
+  ToggleBox = "ToggleBox",
+  KakaoLogin = "KakaoLogin"
 };
 
 enum StackMenus {
