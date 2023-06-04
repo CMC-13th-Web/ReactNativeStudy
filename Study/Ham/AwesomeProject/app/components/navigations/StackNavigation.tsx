@@ -1,12 +1,12 @@
 import React from 'react';
-
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
 import HomeScreen from '../../screens/home';
 import AlertScreen from '../../screens/alert';
 import MessageScreen from '../../screens/message';
 import SearchScreen from '../../screens/search';
-import DetailScreen from '../../screens/Detail';
+import DetailScreen from '../../screens/detail';
 
 const Stack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -20,7 +20,15 @@ const screenOptionStyle = {
   },
 };
 
-const HomeStackNavigator = () => {
+const tabHiddenRoutes = ['Detail'];
+
+const HomeStackNavigator = ({navigation, route}: any) => {
+  if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route) ?? '')) {
+    navigation.setOptions({tabBarStyle: {display: 'none'}});
+  } else {
+    navigation.setOptions({tabBarStyle: {display: 'flex'}});
+  }
+
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <HomeStack.Screen
