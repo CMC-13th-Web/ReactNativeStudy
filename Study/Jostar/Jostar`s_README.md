@@ -149,3 +149,68 @@
     - 증가 증가 증가 감소 버튼을 눌렀을 경우
 
   - 또한 테스트코드내에 Zustand의 Store훅이 적용될 수 있도록 renderHook함수로 훅이 화면상에 반영되게끔 코드를 작성했습니다.
+
+
+### 4. 카카오 로그인 구현하기
+  - 카카오 로그인 구현을 위한 라이브러리 설치
+    yarn add @react-native-seoul/kakao-login
+  
+  - 현재 저는 안드로이드 환경에서만 테스트를 진행할 수 있기 때문에, 안드로이드 카카오 로그인 구현과정에 대해서만 설명을 달도록 하겠습니다.
+    - 먼저 카카오 로그인 구현을 위해 kakao developers 사이트에 접속합니다. 
+      - 그후 애플리케이션을 생성해주고 카카오 로그인 활성화를 해줍니다.
+      - 그 다음 플랫폼을 누르고 패키지명을 수정해줍니다. 이때 우리는 해쉬키라는걸 얻어야합니다.
+    - 해쉬키를 얻기위해선 ./android상에 있는 MainActivity.java 파일을 살짝 수정해서 해쉬키를 얻는 코드로 만들어 줘야합니다. 
+      ```java
+      private void getHashKey(){
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (packageInfo == null)
+            Log.e("KeyHash", "KeyHash:null");
+
+        for (Signature signature : packageInfo.signatures) {
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            } catch (NoSuchAlgorithmException e) {
+                Log.e("KeyHash", "Unable to get MessageDigest. signature=" + signature, e);
+            }
+        }
+      }
+      ```
+      이렇게 말이죠. 이를 안드로이드 스튜디오에서 키고 실행시킨 다음 log상에 찍힌 해쉬키를 Kakao Developer 사이트에 입력해줍시다.
+    - 이제 본격적으로 ./android상에 있는 파일들을 수정해줘야해요.
+      - 먼저 android/build.gradle파일에 접근합니다. 그다음 자신의 안드로이드 스튜디오를 켜서 kotlin 버전을 알아내고 build.gradle내에 ext객체내에 kotlinVersion을 입력해줍니다.
+        ```gradle
+        kotlinVersion = '1.8.20'
+        ```
+        마지막으로 dependencies내에 아래코드를 넣어줍니다.
+        ```
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        ```
+      - 그다음 android/app/src/main/AndroidManifest.xml파일에 접근합니다. 그리고 application태그내에 아래 xml을 입력해줍니다.
+        ```xml
+        <activity 
+          android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+          android:exported="true">
+            <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+
+              <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+              <data android:host="oauth"
+                android:scheme="kakao{{네이티브 키}}" />
+            </intent-filter>
+        </activity>
+        ```
+        그리고 AndroidManifest최상단 manifest에 package="com.패키지명"을 입력해줍니다. 패키지명은 kakao developers에서 입력했던 패키지명입니다.
+      - 마지막으로 android/app/src/main/res/values/string.xml에 다음과 같은 스트링 태그를 넣어줍니다.
+        ```xml
+        <string name="kakao_app_key">{{ 네이티브 키 }}</string>
+        ```
+      그럼 끝났습니다!
