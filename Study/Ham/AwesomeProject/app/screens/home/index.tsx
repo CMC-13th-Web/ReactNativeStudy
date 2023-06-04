@@ -3,10 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Button, View, Text} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-export type RootStackParamList = {
-  HomeScreen: undefined;
-  Detail: {id: number} | undefined;
-};
+import {RootStackParamList} from '../../types/stack';
 
 const Home = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();

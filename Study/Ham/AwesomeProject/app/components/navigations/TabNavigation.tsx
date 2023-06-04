@@ -34,7 +34,6 @@ const BottomTabNavigator = () => {
         component={AlertStackNavigator}
         options={{
           title: '알림',
-
           tabBarIcon: ({color, size}) => (
             <Icon name="bell-alt" color={color} size={size} />
           ),
@@ -43,12 +42,12 @@ const BottomTabNavigator = () => {
       <Tab.Screen
         name="Search"
         component={SearchStackNavigator}
-        options={() => ({
+        options={{
           title: '검색',
           tabBarIcon: ({color, size}) => (
             <Icon name="search" color={color} size={size} />
           ),
-        })}
+        }}
       />
       <Tab.Screen
         name="Message"

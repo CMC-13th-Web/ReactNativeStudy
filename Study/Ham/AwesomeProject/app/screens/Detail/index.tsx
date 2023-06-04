@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {Button, View} from 'react-native';
 
-import {RootStackParamList} from '../home';
+import {RootStackParamList} from '../../types/stack';
 
 const DetailScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
