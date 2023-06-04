@@ -1,0 +1,45 @@
+import { View, Text, Button } from 'react-native'
+import React from 'react'
+import Props from '../models/Props';
+
+interface DetailProps extends Props {
+  route: any;
+}
+
+const Detail = ({ navigation, route }: DetailProps) => {
+  const { id } = route.params;
+
+  const handleNextPage = () => {
+    const nextId = id + 1;
+    navigation.navigate('Detail', { id: nextId });
+  }
+
+  const handlePreviousPage = () => {
+    const previousId = id - 1;
+    previousId > 0 ? navigation.navigate('Detail', { id: previousId }) : navigateHome();
+  }
+
+  const navigateHome = () => {
+    navigation.navigate('Home');
+  }
+
+  return (
+    <View>
+      <Text>Detail {id}</Text>
+      <Button
+        title="다음"
+        onPress={handleNextPage}
+      />
+      <Button
+        title="뒤로가기"
+        onPress={handlePreviousPage}
+      />
+      <Button
+        title="처음으로"
+        onPress={navigateHome}
+      />
+    </View>
+  )
+}
+
+export default Detail
