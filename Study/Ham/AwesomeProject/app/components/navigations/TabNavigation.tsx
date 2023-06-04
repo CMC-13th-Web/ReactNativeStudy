@@ -7,49 +7,57 @@ import {
   SearchStackNavigator,
 } from '../navigations/StackNavigation';
 
+import Icon from '../../assets/icons/icon-config';
+
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="LoginStack">
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#FE8C46',
+      }}>
       <Tab.Screen
-        name="홈"
+        name="Home"
         component={HomeStackNavigator}
         options={{
-          headerShown: false,
-          //   tabBarIcon: ({color, size}) => (
-          //     <Icon name="home-outline" color={color} size={size} />
-          //   ),
+          title: '홈',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
         }}
       />
       <Tab.Screen
-        name="알림"
+        name="Alert"
         component={AlertStackNavigator}
         options={{
-          headerShown: false,
-          //   tabBarIcon: ({color, size}) => (
-          //     <Icon name="map-outline" color={color} size={size} />
-          //   ),
+          title: '알림',
+
+          tabBarIcon: ({color, size}) => (
+            <Icon name="bell-alt" color={color} size={size} />
+          ),
         }}
       />
       <Tab.Screen
-        name="검색"
+        name="Search"
         component={SearchStackNavigator}
         options={() => ({
-          headerShown: false,
-          //   tabBarIcon: ({color, size}) => (
-          //     <Icon name="person-circle" color={color} size={size} />
-          //   ),
+          title: '검색',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="search" color={color} size={size} />
+          ),
         })}
       />
       <Tab.Screen
-        name="메시지"
+        name="Message"
         component={MessageStackNavigator}
         options={() => ({
-          headerShown: false,
-          //   tabBarIcon: ({color, size}) => (
-          //     <Icon name="person-circle" color={color} size={size} />
-          //   ),
+          title: '메시지',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="comment" color={color} size={size} />
+          ),
         })}
       />
     </Tab.Navigator>

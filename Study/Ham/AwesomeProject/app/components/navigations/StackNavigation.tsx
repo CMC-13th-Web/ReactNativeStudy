@@ -17,14 +17,12 @@ const screenOptionStyle = {
   headerStyle: {
     backgroundColor: 'white',
   },
-  headerTintColor: 'white',
-  headerBackTitle: 'Back',
 };
 
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="홈" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
@@ -32,7 +30,7 @@ const HomeStackNavigator = () => {
 const AlertStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <AlertStack.Screen name="Alert" component={AlertScreen} />
+      <AlertStack.Screen name="알림" component={AlertScreen} />
     </Stack.Navigator>
   );
 };
@@ -40,7 +38,7 @@ const AlertStackNavigator = () => {
 const MessageStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <MessageStack.Screen name="Message" component={MessageScreen} />
+      <MessageStack.Screen name="메시지" component={MessageScreen} />
     </Stack.Navigator>
   );
 };
@@ -48,7 +46,7 @@ const MessageStackNavigator = () => {
 const SearchStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <SearchStack.Screen name="Search" component={SearchScreen} />
+      <SearchStack.Screen name="검색" component={SearchScreen} />
     </Stack.Navigator>
   );
 };
