@@ -10,6 +10,10 @@ const Home = ({ navigation }: Props) => {
         title="상세보기"
         onPress={() => navigation.navigate('Detail', {id: 1})}
       />
+      <Button
+        title="과제 2"
+        onPress={() => navigation.navigate('Work1_2', {id: 1})}
+      />
     </View>
   )
 }
