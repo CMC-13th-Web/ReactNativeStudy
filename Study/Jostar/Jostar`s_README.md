@@ -102,3 +102,36 @@
     navigation.navigate(StackMenus.HomeDetailScreen);
     ```
     자 그럼 진짜로 끝났습니다. 이제 편하게 라우팅이 가능해졌습니다. 어떠한 오류도 발생하지않고 타입 안정성을 챙긴(제가 생각하기에는 말이죠...?) 코드를 만들었습니다.
+
+### 2. 토글 버튼을 눌러 box 컴포넌트 제어하기
+- 저는 따로 styled components를 사용하지 않고 styleSheet를 사용해 2번 과제를 진행했습니다.
+
+  Q: 왜 css in js를 사용하지않고 과제를 풀으셨나요?
+
+  A: 리액트 네이티브에서만 사용되는 styleSheet에 적응하는 시간을 가지고싶기도 했고, 이상하게 styled components가 스토리북과의 궁합이 영 좋지않아서 styled components로 적용된 스타일이 스토리북으로 실행해보면(웹에서) 제대로 보이지 않는 이슈가 있었습니다. 이에 저는 styleSheet를 선택하게 되었습니다.
+  테스팅 환경 구축을 위해 다음과 같은 라이브러리를 설치했습니다.
+
+- styleSheet를 다음과 같이 작성하여 전달받은 매개변수에 따라 유동적으로 변하도록 했습니다.
+  ```typescript
+    const commonBoxStyles = (
+      rounded: boolean,
+      size: Size.SMALL | Size.MEDIUM | Size.LARGE,
+      color: string
+    ) => StyleSheet.create({});
+  ```
+- 구현은 토글버튼, 그리고 매개변수로 변하는 박스, 이 두 컴포넌트를 적용하기위한 MessageScreen에서 했습니다.
+  
+- 그후 제 코드가 정상적으로 동작하는지 증명해보이기 위해 테스트 코드를 작성했습니다.
+  
+  설치한 라이브러리는 아래와 같습니다.
+  - @testing-library/jest-native 
+  - @testing-library/react-native
+
+  테스트는 CommonBox에 대해서 3가지를 진행했습니다.
+  - size값을 받고 이를 styleSheet에서 인지가능하게 반환해주는 makeSizeNumber()함수에 대한 테스트.
+  - styleSheet에 매개변수를 넣었을 경우, 매개변수가 스타일에 반영되는지 테스트.
+  - 마지막으로 CommonBox 스냅샷 테스트.
+
+  또한 MessageScreen에 대해서 2가지를 진행했습니다.
+  - 토글버튼을 한번만 누른경우
+  - 토글버튼을 세번 누른경우
