@@ -1,12 +1,14 @@
+import CounterCard from 'components/molecules/cards/CounterCard/CounterCard';
 import React from 'react';
 import { View } from 'react-native';
+import { notificationScreenStyles } from './NotificationScreen.style';
 
-const AlertScreen = () => {
+const NotificationScreen = () => {
   return (
-    <View>
-      
+    <View style={notificationScreenStyles.container}>
+      <CounterCard/>
     </View>
   );
 };
 
-export default AlertScreen;
+export default NotificationScreen;
