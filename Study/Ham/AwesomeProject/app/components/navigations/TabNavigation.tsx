@@ -5,7 +5,7 @@ import {
   AlertStackNavigator,
   MessageStackNavigator,
   SearchStackNavigator,
-} from '../navigations/StackNavigation';
+} from './StackNavigation';
 
 import Icon from '../../assets/icons/icon-config';
 
