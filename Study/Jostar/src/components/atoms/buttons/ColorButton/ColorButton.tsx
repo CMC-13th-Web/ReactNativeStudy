@@ -1,6 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, TouchableOpacity } from "react-native";
 import { colorButtonStyles } from "./ColorButton.style";
 
 interface Props {
@@ -16,6 +15,7 @@ const ColorButton = ({ label, color, handleClick }: Props) => {
         ...colorButtonStyles.container,
         backgroundColor: color,
       }}
+      testID={`colorButton-${label}`}
       onPress={handleClick}
     >
       <Text style={colorButtonStyles.labelText}>{label}</Text>
