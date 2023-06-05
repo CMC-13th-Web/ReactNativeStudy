@@ -12,11 +12,15 @@ export default function Home({ navigation }: Props) {
       />
       <Button
         title="과제 1-2"
-        onPress={() => navigation.navigate('Assignment1_2', {id: 1})}
+        onPress={() => navigation.navigate('Assignment1_2')}
       />
       <Button
         title="과제 1-3"
-        onPress={() => navigation.navigate('Assignment1_3', {id: 1})}
+        onPress={() => navigation.navigate('Assignment1_3')}
+      />
+      <Button
+        title="과제 1-4"
+        onPress={() => navigation.navigate('Assignment1_4')}
       />
     </View>
   )
