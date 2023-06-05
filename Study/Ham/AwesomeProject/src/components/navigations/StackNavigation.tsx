@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
@@ -23,11 +23,13 @@ const screenOptionStyle = {
 const tabHiddenRoutes = ['Detail'];
 
 const HomeStackNavigator = ({navigation, route}: any) => {
-  if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route) ?? '')) {
-    navigation.setOptions({tabBarStyle: {display: 'none'}});
-  } else {
-    navigation.setOptions({tabBarStyle: {display: 'flex'}});
-  }
+  useEffect(() => {
+    if (tabHiddenRoutes.includes(getFocusedRouteNameFromRoute(route) ?? '')) {
+      navigation.setOptions({tabBarStyle: {display: 'none'}});
+    } else {
+      navigation.setOptions({tabBarStyle: {display: 'flex'}});
+    }
+  }, [navigation, route]);
 
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
