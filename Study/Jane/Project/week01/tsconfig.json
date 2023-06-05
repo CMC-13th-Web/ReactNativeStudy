@@ -16,7 +16,8 @@
       "*": ["*"],
       "components/*": ["components/*"],
       "navigation/*": ["navigation/*"],
-      "screens/*": ["screens/*"]
+      "screens/*": ["screens/*"],
+      "stores/*": ["stores/*"]
     }
   },
   "exclude": [
