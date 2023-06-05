@@ -64,7 +64,7 @@ yarn-error.log
 
 /__tests__
 /.bundle
-/node_modules
+
 /vendor
 /Android
 /ios
@@ -76,3 +76,5 @@ yarn-error.log
 .babel.config.js
 .Gemfile
 .yarn.lock
+.pakage-lock.json
+.pakage.json
