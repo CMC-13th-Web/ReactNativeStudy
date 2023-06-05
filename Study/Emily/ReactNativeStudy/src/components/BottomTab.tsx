@@ -3,15 +3,15 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Notification from '../pages/Notification';
 import Search from '../pages/Search';
 import Message from '../pages/Message';
-import HomeStack from './HomeStack';
+import Home from '../pages/Home';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTab() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="HomeStack" component={HomeStack} options={{
-        headerShown: false,
+      <Tab.Screen name="Home" component={Home} options={{
+        title: '홈',
         tabBarLabel: '홈',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />

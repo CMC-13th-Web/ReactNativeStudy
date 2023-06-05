@@ -7,7 +7,7 @@ export default function Home({ navigation }: Props) {
     <View>
       <Text>Home</Text>
       <Button
-        title="상세보기 (과제 1-1)"
+        title="과제 1-1 (상세보기)"
         onPress={() => navigation.navigate('Detail', {id: 1})}
       />
       <Button
