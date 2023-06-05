@@ -9,7 +9,9 @@ const Tab = createBottomTabNavigator();
 
 export const TabNavigation = () => {
   return (
-    <Tab.Navigator initialRouteName="홈">
+    <Tab.Navigator
+      initialRouteName="홈"
+      screenOptions={() => ({headerShown: false})}>
       <Tab.Screen
         name="홈"
         component={StackNavigation}

@@ -12,7 +12,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 export const StackNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={() => ({headerShown: false})}>
+    <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Detail" component={DetailScreen} />
     </Stack.Navigator>
