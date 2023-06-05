@@ -1,10 +1,18 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Button, View} from 'react-native';
+import Box from 'components/Box';
 
 function NotificationScreen() {
+  const [visible, setVisible] = useState<boolean>(true);
+
+  const onPress = () => {
+    setVisible(!visible);
+  };
+
   return (
     <View>
-      <Text>Notification</Text>
+      <Button title="토글" onPress={onPress} />
+      {visible && <Box rounded color="blue" size="large" />}
     </View>
   );
 }
