@@ -1,12 +1,11 @@
 import {
-  render,
   fireEvent,
-  waitFor,
+  render,
   renderHook,
-  act,
+  waitFor
 } from "@testing-library/react-native";
-import CounterCard from "./CounterCard";
 import { useCountStore } from "store/count";
+import CounterCard from "./CounterCard";
 
 // const initRender = () => {
 //   const { count } = useCountStore();
@@ -21,7 +20,7 @@ describe("컴포넌트/원자/카드/카운터카드", () => {
     fireEvent.press(increaseButton);
     await waitFor(() => expect(current.result.current.count).toBe(1));
   });
-  test("+ + + - 버튼을 누를 경우, 카운트값이 1인지 테스트", async () => {
+  test("+ + + - 버튼을 누를 경우, 카운트값이 2인지 테스트", async () => {
     const current = renderHook(() => useCountStore());
     const screen = render(<CounterCard />);
     const increaseButton = screen.getByTestId("colorButton-증가");
