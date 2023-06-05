@@ -78,3 +78,5 @@ ios
 .watchmanconfig
 Gemfile
 Gemfile.lock
+babel.config.js
+metro.config.js
