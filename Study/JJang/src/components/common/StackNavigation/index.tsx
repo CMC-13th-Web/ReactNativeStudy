@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 export const StackNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={() => ({headerShown: false})}>
       <Stack.Screen name="홈" component={HomeScreen} />
       <Stack.Screen name="상세" component={DetailScreen} />
     </Stack.Navigator>
