@@ -1,12 +1,20 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {styled} from 'styled-components/native';
+import {useCounterStore} from 'stores/CounterStore';
+import Counter from 'components/Counter';
 
 function SearchScreen() {
+  const {count, increase, decrease} = useCounterStore();
+
   return (
-    <View>
-      <Text>Search</Text>
-    </View>
+    <StyledView>
+      <Counter count={count} onIncrease={increase} onDecrease={decrease} />
+    </StyledView>
   );
 }
 
 export default SearchScreen;
+
+const StyledView = styled.View`
+  flex: 1;
+`;
