@@ -1,12 +1,7 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { BottomMenus } from "constants/menus";
 import { bottomTabMenu } from "data/menus/bottomTabMenus";
-//const Tab = createMaterialTopTabNavigator();
-// screenOptions={{
-//   tabBarActiveTintColor: "#e91e63",
-//   tabBarLabelStyle: { fontSize: 12 },
-//   tabBarStyle: { backgroundColor: "powderblue" },
-// }}
+
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabNavigator = () => {
