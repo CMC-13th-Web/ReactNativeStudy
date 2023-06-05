@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeStackScreen from '../Pages/Home/HomeStackScreen';
-import NotificationsScreen from '../Pages/Notification/NotificationsScreen';
+import NotificationsScreen from '../Pages/Calculation/Calculation';
 import SearchScreen from '../Pages/Search/SearchScreen';
 import MessagesScreen from '../Pages/Message/MessagesScreen';
 
@@ -19,7 +19,7 @@ export default function BottomTab() {
         component={HomeStackScreen}
         options={{headerShown: false}}
       />
-      <Tab.Screen name="알림" component={NotificationsScreen} />
+      <Tab.Screen name="계산기" component={NotificationsScreen} />
       <Tab.Screen name="검색" component={SearchScreen} />
       <Tab.Screen name="메세지" component={MessagesScreen} />
     </Tab.Navigator>
