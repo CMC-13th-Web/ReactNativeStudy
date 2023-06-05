@@ -1,8 +1,13 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {View} from 'react-native/types';
+import {TabNavigation} from './src/components/common/TabNavigation';
 
 function App(): JSX.Element {
-  return <View />;
+  return (
+    <NavigationContainer>
+      <TabNavigation />
+    </NavigationContainer>
+  );
 }
 
 export default App;
