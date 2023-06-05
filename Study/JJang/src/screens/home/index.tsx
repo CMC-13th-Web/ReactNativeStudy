@@ -4,7 +4,7 @@ import {Button, View} from 'react-native';
 import {Box} from '../../components/home/Box';
 
 export const HomeScreen = () => {
-  const [isBoxVisible, setIsBoxVisible] = useState<boolean>(false);
+  const [isBoxVisible, setIsBoxVisible] = useState<boolean>(true);
 
   return (
     <View>
