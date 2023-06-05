@@ -5,20 +5,16 @@
  * @format
  */
 
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import Home from 'screens/Home';
-import {styled} from 'styled-components/native';
+import RootStack from 'navigation/RootStack';
 
 function App(): JSX.Element {
   return (
-    <StyledSafeAreaView>
-      <Home />
-    </StyledSafeAreaView>
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
   );
 }
 
 export default App;
-
-const StyledSafeAreaView = styled.SafeAreaView`
-  flex: 1;
-`;
