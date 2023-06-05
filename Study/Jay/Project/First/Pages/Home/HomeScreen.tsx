@@ -6,8 +6,8 @@ function HomeScreen({navigation}: {navigation: any}) {
     <View>
       <Text>Home</Text>
       <Button
-        title="상세보기"
-        onPress={() => navigation.navigate('상세보기')}
+        title="과제 1-2"
+        onPress={() => navigation.navigate('과제 1-2')}
       />
     </View>
   );
