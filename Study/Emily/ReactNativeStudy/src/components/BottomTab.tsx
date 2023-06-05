@@ -14,8 +14,8 @@ export default function BottomTab() {
         headerShown: false,
         tabBarLabel: '홈',
         tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
       }} />
       <Tab.Screen name="Notification" component={Notification} options={{
         title: '알림',

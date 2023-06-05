@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { countState } from '../recoil/atoms/count';
+import { countState } from '../../recoil/atoms/count';
+import { styles } from './Assignment1_3_StyleSheet';
 
-const Work1_3 = () => {
+export default function Assignment1_3() {
   const count = useRecoilValue(countState);
   const [countValue, setCountValue] = useRecoilState(countState);
 
@@ -23,18 +24,3 @@ const Work1_3 = () => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  countText: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  }
-});
-
-export default Work1_3

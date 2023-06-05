@@ -6,7 +6,7 @@ interface DetailProps extends Props {
   route: any;
 }
 
-const Detail = ({ navigation, route }: DetailProps) => {
+export default function Detail({ navigation, route }: DetailProps) {
   const { id } = route.params;
 
   const handleNextPage = () => {
@@ -16,10 +16,10 @@ const Detail = ({ navigation, route }: DetailProps) => {
 
   const handlePreviousPage = () => {
     const previousId = id - 1;
-    previousId > 0 ? navigation.navigate('Detail', { id: previousId }) : navigateHome();
+    previousId > 0 ? navigation.navigate('Detail', { id: previousId }) : navigateToHome();
   }
 
-  const navigateHome = () => {
+  const navigateToHome = () => {
     navigation.navigate('Home');
   }
 
@@ -36,10 +36,8 @@ const Detail = ({ navigation, route }: DetailProps) => {
       />
       <Button
         title="처음으로"
-        onPress={navigateHome}
+        onPress={navigateToHome}
       />
     </View>
   )
 }
-
-export default Detail
