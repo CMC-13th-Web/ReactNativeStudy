@@ -16,7 +16,7 @@ export default function App() {
           options={{headerShown: false}}
         />
         <RootStack.Screen
-          name="상세보기"
+          name="과제 1-2"
           component={DetailsScreen}
           options={{headerShown: true}}
         />
