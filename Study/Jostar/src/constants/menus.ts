@@ -11,4 +11,3 @@ enum StackMenus {
 };
 
 export { BottomMenus, StackMenus };
-

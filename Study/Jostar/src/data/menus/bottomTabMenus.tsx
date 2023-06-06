@@ -3,7 +3,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import CountScreen from "screens/NotificationScreen/CountScreen";
+import CountScreen from "screens/CountScreen/CountScreen";
 import HomeScreen from "screens/HomeScreen/HomeScreen";
 import ToggleBoxScreen from "screens/ToggleBoxScreen/ToggleBoxScreen";
 import KakaoLoginScreen from "screens/KakaoLoginScreen/KakaoLoginScreen";
