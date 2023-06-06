@@ -1,12 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Message = () => {
+export default function Message() {
   return (
     <View>
       <Text>Message</Text>
     </View>
   )
 }
-
-export default Message

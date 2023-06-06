@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
-import Box from '../components/UI/Box';
-import { Size } from '../models/Enums/Size';
+import { View, TextInput } from 'react-native';
+import Box from '../../components/UI/Box/Box';
+import { Size } from '../../models/Enums/Size';
+import { styles } from './Assignment1_2_StyleSheet';
 
-type Props = {}
-
-const Work1_2 = (props: Props) => {
+export default function Assignment1_2() {
   const [rounded, setRounded] = useState(false);
   const [size, setSize] = useState(Size.Medium);
   const [color, setColor] = useState('blue');
@@ -33,24 +32,3 @@ const Work1_2 = (props: Props) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  form: {
-    marginBottom: 20,
-  },
-  input: {
-    height: 40,
-    width: 200,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-  },
-});
-
-export default Work1_2
