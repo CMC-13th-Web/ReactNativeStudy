@@ -15,6 +15,7 @@ import CounterCard from "./CounterCard";
 describe("컴포넌트/원자/카드/카운터카드", () => {
   test("+ 버튼을 누를 경우, 카운트값이 1인지 테스트", async () => {
     const current = renderHook(() => useCountStore());
+    current.result.current.resetCountState();
     const screen = render(<CounterCard />);
     const increaseButton = screen.getByTestId("colorButton-증가");
     fireEvent.press(increaseButton);
@@ -22,6 +23,7 @@ describe("컴포넌트/원자/카드/카운터카드", () => {
   });
   test("+ + + - 버튼을 누를 경우, 카운트값이 2인지 테스트", async () => {
     const current = renderHook(() => useCountStore());
+    current.result.current.resetCountState();
     const screen = render(<CounterCard />);
     const increaseButton = screen.getByTestId("colorButton-증가");
     const decreaseButton = screen.getByTestId("colorButton-감소");
