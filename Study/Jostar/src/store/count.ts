@@ -7,6 +7,7 @@ interface CountState {
 interface Store extends CountState {
   increaseCountState: () => void;
   decreaseCountState: () => void;
+  resetCountState: () => void;
 };
 
 const initCountState = {
@@ -24,6 +25,9 @@ export const useCountStore = create<Store>()(
     decreaseCountState: () => 
       set((state: CountState) => ({
       count: state.count - 1
+    })),
+    resetCountState: () => set(() => ({
+      count: 0
     }))
   })
 );

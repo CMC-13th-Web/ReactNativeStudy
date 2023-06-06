@@ -27,6 +27,6 @@ describe("스크린/메시지스크린", () => {
     fireEvent(commonSwitch, 'valueChange', true);
     fireEvent(commonSwitch, 'valueChange', true);
     fireEvent(commonSwitch, 'valueChange', true);
-    await waitFor(() => expect(screen.getByText(/어떠한 박스도 없습니다!/g)).toBeDefined());
+    await waitFor(() => expect(screen.getByTestId("commonBox")).toBeDefined());
   });
 });
