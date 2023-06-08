@@ -87,6 +87,10 @@
 		<string>kakaokompassauth</string>
 		<string>storykompassauth</string>
 		<string>kakaolink</string>
-	</array>	
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>카메라 접근을 원하시면 '확인'을 눌러 허용해 주세요.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>원활한 사진 접근을 원하시면 '모든 사진에 대한 접근 허용'을 눌러 허용해 주세요.</string>
 </dict>
 </plist>
