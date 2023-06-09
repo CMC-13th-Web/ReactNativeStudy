@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreen} from '../../../screens/home';
-import {DetailScreen} from '../../../screens/detail.tsx';
+import {DetailScreen} from '../../../screens/detail';
 
 export type RootStackParamList = {
   Home: undefined;
