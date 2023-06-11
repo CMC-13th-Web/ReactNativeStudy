@@ -15,7 +15,8 @@
     "react-native": "0.71.8",
     "react-native-cli": "^2.0.1",
     "react-native-image-picker": "^5.4.0",
-    "react-native-permissions": "^3.8.0"
+    "react-native-permissions": "^3.8.0",
+    "react-native-splash-screen": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
