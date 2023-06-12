@@ -37,7 +37,7 @@ const CommonList = <T extends Card>({
           <CommonCard<T>
             key={cardElement.item.id}
             item={cardElement.item}
-            handleClick={() => { handleCardClick(cardElement.item) }}
+            handleClick={() => handleCardClick(cardElement.item)}
             addonInfo={"year"}
           />
         )}
