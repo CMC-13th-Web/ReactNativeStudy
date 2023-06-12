@@ -66,3 +66,16 @@ yarn-error.log
 
 # eslint
 .eslintrc.js
+
+# for readability
+__tests__
+.bundle
+android
+ios
+.node-version
+.prettierrc.js
+.watchmanconfig
+Gemfile
+Gemfile.lock
+babel.config.js
+metro.config.js
