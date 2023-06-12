@@ -1,6 +1,6 @@
 import { Text, Pressable } from 'react-native'
 import React from 'react'
-import { styles } from './KakaoButtonStyleSheet';
+import { styles } from './KakaoButton.style';
 
 type Props = {
   text: string;
