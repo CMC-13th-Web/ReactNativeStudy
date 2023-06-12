@@ -7,7 +7,7 @@ import { Card } from "types/apps/card";
 
 interface CommonListProps<T> {
   listData: T[] | undefined;
-  handleCardClick: (id: number) => void;
+  handleCardClick: (item: T) => void;
   hasNextPage: boolean | undefined;
   fetchNextPage: () => {};
   isFetching: boolean;
@@ -33,11 +33,11 @@ const CommonList = <T extends Card>({
         onEndReachedThreshold={0.5}
         keyExtractor={(item, index) => String(item.id)}
         ListFooterComponent={isFetching ? <CommonListSkeleton /> : undefined}
-        renderItem={(movie) => (
+        renderItem={(cardElement) => (
           <CommonCard<T>
-            key={movie.item.id}
-            item={movie.item}
-            handleClick={() => { handleCardClick(movie.item.id) }}
+            key={cardElement.item.id}
+            item={cardElement.item}
+            handleClick={() => { handleCardClick(cardElement.item) }}
             addonInfo={"year"}
           />
         )}
