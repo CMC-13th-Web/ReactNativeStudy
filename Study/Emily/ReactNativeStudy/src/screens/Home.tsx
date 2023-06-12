@@ -1,7 +1,7 @@
 import { View, Button } from 'react-native'
 import React, { useEffect } from 'react'
 import Props from '../models/Props'
-import { requestPermissions } from '../services/Permission/PermissionManager';
+import { requestPermissions } from '../services/Permission/PermissionService';
 
 export default function Home({ navigation }: Props) {
 
