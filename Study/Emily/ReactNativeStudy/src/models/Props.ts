@@ -1,3 +1,5 @@
+import { MainNavigationProp } from '../../App';
+
 export default interface Props {
-  navigation: any;
+  navigation: MainNavigationProp;
 }

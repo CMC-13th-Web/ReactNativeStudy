@@ -1,8 +1,14 @@
 import { View, Text, Button } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Props from '../models/Props'
+import { requestPermissions } from '../utils/Permissions'
 
 export default function Home({ navigation }: Props) {
+
+  useEffect(() => {
+    requestPermissions();
+  }, []);
+
   return (
     <View>
       <Text>Home</Text>
@@ -21,6 +27,10 @@ export default function Home({ navigation }: Props) {
       <Button
         title="과제 1-4"
         onPress={() => navigation.navigate('Assignment1_4')}
+      />
+      <Button
+        title="과제 2-1"
+        onPress={() => navigation.navigate('Assignment2_1')}
       />
     </View>
   )

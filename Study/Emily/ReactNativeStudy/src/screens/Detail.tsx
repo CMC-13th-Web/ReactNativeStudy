@@ -1,9 +1,11 @@
 import { View, Text, Button } from 'react-native'
 import React from 'react'
+import { MainStackParamList } from '../navigations/MainStack';
+import { RouteProp } from '@react-navigation/native';
 import Props from '../models/Props';
 
 interface DetailProps extends Props {
-  route: any;
+  route: RouteProp<MainStackParamList, 'Detail'>;
 }
 
 export default function Detail({ navigation, route }: DetailProps) {
