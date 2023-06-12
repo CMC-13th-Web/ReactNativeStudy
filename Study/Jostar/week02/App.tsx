@@ -1,7 +1,17 @@
-import { View } from "react-native"
+import { NavigationContainer } from "@react-navigation/native";
+import Navigator from "navigators/Navigator";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 const App = () => {
-  return <View/>
+  return (
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <Navigator/>
+      </NavigationContainer>
+    </QueryClientProvider>
+  )
 }
 
 export default App;
