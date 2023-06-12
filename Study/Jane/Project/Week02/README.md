@@ -1,7 +1,7 @@
 ## 기능 구현사항
 
 - [ ] #1 카메라 기능 사용하기
-  - [ ] `react-native-permissions` 이용하여 카메라, 사진첩 권한 구하기
+  - [x] `react-native-permissions` 이용하여 카메라, 사진첩 권한 요청
   - [ ] AddScreen
     - [ ] 퍼블리싱
     - [ ] `react-native-image-crop-picker` 설치

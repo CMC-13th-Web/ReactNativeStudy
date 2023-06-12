@@ -5,11 +5,16 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStack from 'screens/RootStack';
+import requestPermissions from 'utils/Utils';
 
 function App() {
+  useEffect(() => {
+    requestPermissions();
+  }, []);
+
   return (
     <NavigationContainer>
       <RootStack />
