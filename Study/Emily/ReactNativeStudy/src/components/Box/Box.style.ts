@@ -1,18 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { Size } from '../../../models/Enums/Size';
+import { Size } from '../../models/Enums/Size';
 
 export const getBoxStyle = (
   isRounded: boolean,
   size: Size,
-  color: string,
-  isVisible: boolean) => 
+  color: string) => 
   StyleSheet.create({
     box: {
       width: getLength(size),
       height: getLength(size),
       backgroundColor: color,
-      borderRadius: isRounded ? 20 : 0,
-      display: isVisible ? 'flex' : 'none',
+      borderRadius: isRounded ? 20 : 0
     },
   });
 

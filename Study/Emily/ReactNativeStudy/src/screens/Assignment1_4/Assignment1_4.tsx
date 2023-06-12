@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import React, { useState } from 'react';
 import { login, logout } from '@react-native-seoul/kakao-login';
-import { styles } from './Assignment1_4_StyleSheet';
+import { styles } from './Assignment1_4.style';
 import KakaoButton from '../../components/UI/KakaoButton/KakaoButton';
 
 export default function Assignment1_4() {
