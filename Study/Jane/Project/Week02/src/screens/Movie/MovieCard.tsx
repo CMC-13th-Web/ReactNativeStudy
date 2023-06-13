@@ -1,15 +1,9 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {TouchableNativeFeedback} from 'react-native';
-import {RootStackNavigationProp} from 'screens/types';
 import {styled} from 'styled-components/native';
-
-export interface MovieCardProps {
-  id: string;
-  title: string;
-  imgSrc: string;
-  year: string;
-}
+import {useNavigation} from '@react-navigation/native';
+import {MovieList} from 'types/MovieTypes';
+import {RootStackNavigationProp} from 'screens/types';
 
 const Container = styled.View`
   background-color: white;
@@ -40,7 +34,12 @@ const Year = styled.Text`
   color: #949494;
 `;
 
-export default function MovieCard({id, title, imgSrc, year}: MovieCardProps) {
+export default function MovieCard({
+  id,
+  title,
+  medium_cover_image,
+  year,
+}: MovieList) {
   const navigation = useNavigation<RootStackNavigationProp>();
 
   const onPress = () => {
@@ -56,7 +55,7 @@ export default function MovieCard({id, title, imgSrc, year}: MovieCardProps) {
         }}>
         <StyledImage
           source={{
-            uri: imgSrc,
+            uri: medium_cover_image,
           }}
         />
         <Info>

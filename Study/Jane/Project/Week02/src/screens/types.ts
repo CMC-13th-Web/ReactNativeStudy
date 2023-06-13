@@ -27,7 +27,7 @@ export type RootStackParamList = {
   PhotoDetail: undefined;
   Preview: undefined;
   MovieDetail: {
-    id: string;
+    id: number;
   };
 };
 export type RootStackNavigationProp =

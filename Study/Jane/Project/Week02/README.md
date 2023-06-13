@@ -20,5 +20,5 @@
   - [x] HomeScreen 제작
     - [x] MovieCard Component 제작
   - [x] DetailScreen 제작
-  - [ ] react-query 설치, api 정의
-  - [ ] 무한 스크롤 구현
+  - [x] react-query 설치, api 정의
+  - [x] 무한 스크롤 구현
