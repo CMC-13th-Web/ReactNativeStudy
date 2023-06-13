@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Dimensions, FlatList, Image, SafeAreaView, View} from 'react-native';
-// import {Image as ImageType} from 'react-native-image-crop-picker';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {usePhotoStore} from 'stores/PhotoStore';
 import {styled} from 'styled-components/native';
+import {usePhotoStore} from 'stores/PhotoStore';
 
 const StyledView = styled.ScrollView`
   padding-horizontal: 16;
@@ -20,26 +18,23 @@ const StyledText = styled.Text`
 export default function FeedScreen() {
   const {photos} = usePhotoStore();
 
-  const {bottom} = useSafeAreaInsets();
-
   const [imageSize, setImageSize] = useState({width: 0, height: 0});
 
   useEffect(() => {
     const screenWidth = Dimensions.get('window').width;
     const imageSize = screenWidth / 3 - 8;
     setImageSize({width: imageSize, height: imageSize});
-  }, []);
+  }, [photos.length]);
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <StyledView contentContainerStyle={{marginBottom: bottom}}>
+      <StyledView>
         <FlatList
           ListHeaderComponent={<StyledText>Today</StyledText>}
           data={photos}
           scrollEnabled={false}
           numColumns={3}
-          keyExtractor={(item, index) => index.toString()}
-          // contentContainerStyle={{justifyContent: 'space-between'}}
+          keyExtractor={(_, index) => index.toString()}
           renderItem={({item}) => (
             <View style={{flex: 1}}>
               <Image
@@ -49,7 +44,6 @@ export default function FeedScreen() {
                   flex: 1 / 3,
                   width: imageSize.width,
                   height: imageSize.height,
-                  // flexDirection: 'column',
                 }}
               />
             </View>
