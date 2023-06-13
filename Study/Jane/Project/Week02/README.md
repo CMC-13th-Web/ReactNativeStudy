@@ -13,9 +13,9 @@
       - [x] 앨범에서 사진 선택 기능 제작
       - [x] CropScreen
     - [x] FeedScreen grid 형태로 제작
-- [ ] #2 `react-native-splash-screen` 이용하여 스플래쉬 이미지 넣기
-  - [ ] ios
-  - [ ] android
+- [x] #2 `react-native-splash-screen` 이용하여 스플래쉬 이미지 넣기
+  - [x] ios
+  - [x] android
 - [ ] #3 영화 포스터 무한스크롤 구현하기 (선택)
   - [ ] react-query 이용
   - [ ] 상세 페이지 구현하기
