@@ -34,7 +34,7 @@ function MainTab() {
         component={AddScreen}
         options={{
           title: 'Add',
-          tabBarIcon: ({_, size}) => (
+          tabBarIcon: ({size}) => (
             <View
               style={{
                 justifyContent: 'center',
