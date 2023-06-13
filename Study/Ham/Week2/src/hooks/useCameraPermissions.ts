@@ -6,7 +6,6 @@ import {
   openSettings,
   PERMISSIONS,
   PermissionStatus,
-  RESULTS,
 } from 'react-native-permissions';
 
 interface CameraPermission {
@@ -31,16 +30,11 @@ export const useAndroidCameraPermissions = (
 
   const requestCameraPermission = useCallback(async () => {
     try {
-      const result = await checkCameraPermission();
-      if (result === RESULTS.DENIED) {
-        const permissionStatus = await request(
-          PERMISSIONS.ANDROID.CAMERA,
-          requestRationale,
-        );
-        return permissionStatus;
-      } else {
-        return result;
-      }
+      const permissionStatus = await request(
+        PERMISSIONS.ANDROID.CAMERA,
+        requestRationale,
+      );
+      return permissionStatus;
     } catch (error) {
       console.error('Android: requestCameraPermission error', error);
       return null;
@@ -60,6 +54,7 @@ export const useIosCameraPermissions = (
 ): CameraPermission => {
   const checkCameraPermission = async () => {
     try {
+      // Check iOS 'location: when in use' permission
       const cameraStatus = await check(PERMISSIONS.IOS.CAMERA);
       return cameraStatus;
     } catch (error) {
@@ -70,16 +65,12 @@ export const useIosCameraPermissions = (
 
   const requestCameraPermission = useCallback(async () => {
     try {
-      const result = await checkCameraPermission();
-      if (result === RESULTS.DENIED) {
-        const cameraStatus = await request(
-          PERMISSIONS.IOS.CAMERA,
-          requestRationale,
-        );
-        return cameraStatus;
-      } else {
-        return result;
-      }
+      // Request iOS 'location: when in use' permission
+      const cameraStatus = await request(
+        PERMISSIONS.IOS.CAMERA,
+        requestRationale,
+      );
+      return cameraStatus;
     } catch (error) {
       console.error('iOS: requestCameraPermission error', error);
       return null;
@@ -93,6 +84,7 @@ export const useIosCameraPermissions = (
   };
 };
 
+// Use hook based on platform
 export const useCameraPermissions = Platform.select({
   android: useAndroidCameraPermissions,
   ios: useIosCameraPermissions,
