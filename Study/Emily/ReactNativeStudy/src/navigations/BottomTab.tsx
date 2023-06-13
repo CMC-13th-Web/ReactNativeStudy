@@ -20,7 +20,7 @@ export default function BottomTab() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} options={{
-        tabBarLabel: '홈',
+        title: '홈',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
         ),
