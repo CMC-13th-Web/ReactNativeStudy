@@ -4,8 +4,8 @@
   - [x] `react-native-permissions` 이용하여 카메라, 사진첩 권한 요청
   - [ ] AddScreen
     - [x] 퍼블리싱
-    - [ ] `react-native-image-crop-picker` 설치
-    - [ ] 업로드 상태 스토어 제작
+    - [x] `react-native-image-crop-picker` 설치
+    - [x] 업로드 상태 스토어 제작
     - [ ] 카메라 버튼
       - [ ] 카메라 촬영 기능 제작
       - [ ] CropScreen
