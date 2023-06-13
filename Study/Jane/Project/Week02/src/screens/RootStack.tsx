@@ -16,7 +16,11 @@ function RootStack() {
         options={{headerShown: false}}
       />
       <Stack.Screen name="PhotoDetail" component={PhotoDetailScreen} />
-      <Stack.Screen name="Preview" component={PreviewScreen} />
+      <Stack.Screen
+        name="Preview"
+        component={PreviewScreen}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }

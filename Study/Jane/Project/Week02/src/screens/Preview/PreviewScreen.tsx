@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {styled} from 'styled-components/native';
+
+const StyledView = styled.View`
+  background-color: #161616;
+  flex: 1;
+`;
 
 export default function PreviewScreen() {
-  return (
-    <View>
-      <Text>Preview</Text>
-    </View>
-  );
+  return <StyledView />;
 }
