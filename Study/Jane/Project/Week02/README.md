@@ -12,7 +12,7 @@
     - [x] 갤러리 버튼
       - [x] 앨범에서 사진 선택 기능 제작
       - [x] CropScreen
-    - [ ] FeedScreen grid 형태로 제작
+    - [x] FeedScreen grid 형태로 제작
 - [ ] #2 `react-native-splash-screen` 이용하여 스플래쉬 이미지 넣기
   - [ ] ios
   - [ ] android
