@@ -3,9 +3,9 @@ import { CompositeNavigationProp, NavigationContainer } from '@react-navigation/
 import { RecoilRoot } from 'recoil';
 import SplashScreen from 'react-native-splash-screen';
 import MainStack, { MainStackNavigationProp } from './src/navigations/MainStack';
-import { BottomTabNavigationProp } from './src/navigations/BottomTab';
+import { BottomTabNavigationProps } from './src/navigations/BottomTab';
 
-export type MainNavigationProp = CompositeNavigationProp<MainStackNavigationProp, BottomTabNavigationProp>
+export type MainNavigationProp = CompositeNavigationProp<MainStackNavigationProp, BottomTabNavigationProps>
 
 export default function App(): JSX.Element {
   useEffect(() => {
