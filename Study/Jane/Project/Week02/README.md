@@ -5,12 +5,14 @@
   - [ ] AddScreen
     - [x] 퍼블리싱
     - [ ] `react-native-image-crop-picker` 설치
+    - [ ] 업로드 상태 스토어 제작
     - [ ] 카메라 버튼
       - [ ] 카메라 촬영 기능 제작
-      - [ ] PreviewScreen 제작
+      - [ ] CropScreen
     - [ ] 갤러리 버튼
       - [ ] 앨범에서 사진 선택 기능 제작
-      - [ ] PreviewScreen 제작
+      - [ ] CropScreen
+    - [ ] FeedScreen grid 형태로 제작
 - [ ] #2 `react-native-splash-screen` 이용하여 스플래쉬 이미지 넣기
   - [ ] ios
   - [ ] android
