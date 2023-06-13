@@ -1,9 +1,9 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeStackScreen from '../Pages/Home/HomeStackScreen';
-import NotificationsScreen from '../Pages/Calculation/Calculation';
-import SearchScreen from '../Pages/Search/SearchScreen';
-import MessagesScreen from '../Pages/Message/MessagesScreen';
+import HomeStackScreen from '../Pages/home/HomeStackScreen';
+import Counter from '../Pages/counter/Counter';
+import SearchScreen from '../Pages/gallery/Gallery';
+import MessagesScreen from '../Pages/message/MessagesScreen';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator();
@@ -28,7 +28,7 @@ export default function BottomTab() {
       />
       <Tab.Screen
         name="계산기"
-        component={NotificationsScreen}
+        component={Counter}
         options={{
           title: '계산기',
           tabBarIcon: ({color, size}) => (
@@ -37,12 +37,12 @@ export default function BottomTab() {
         }}
       />
       <Tab.Screen
-        name="검색"
+        name="갤러리"
         component={SearchScreen}
         options={{
-          title: '검색',
+          title: '갤러리',
           tabBarIcon: ({color, size}) => (
-            <Icon name="search" color={color} size={size} />
+            <Icon name="insert-photo" color={color} size={size} />
           ),
         }}
       />

@@ -1,9 +1,9 @@
 // Calculation.tsx
 import React from 'react';
 import {View, Text, Button} from 'react-native';
-import useStore from '../../Store/Store';
+import useStore from '../../store/Store';
 
-function Calculation() {
+function Counter() {
   const {count, increment, decrement, reset} = useStore();
 
   return (
@@ -16,4 +16,4 @@ function Calculation() {
   );
 }
 
-export default Calculation;
+export default Counter;
