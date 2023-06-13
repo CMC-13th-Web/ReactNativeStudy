@@ -10,7 +10,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 export type MainTabParamList = {
   Feed: undefined;
   Add: undefined;
-  Profile: undefined;
+  Movie: undefined;
 };
 export type MainTabNavigationScreenParams =
   NavigatorScreenParams<MainTabParamList>;
@@ -26,6 +26,9 @@ export type RootStackParamList = {
   MainTab: MainTabNavigationScreenParams;
   PhotoDetail: undefined;
   Preview: undefined;
+  MovieDetail: {
+    id: string;
+  };
 };
 export type RootStackNavigationProp =
   NativeStackNavigationProp<RootStackParamList>;

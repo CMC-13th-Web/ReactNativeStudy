@@ -1,11 +1,11 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MainTabParamList} from './types';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import ProfileScreen from './Profile/ProfileScreen';
-import FeedScreen from './Feed/FeedScreen';
 import {View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {MainTabParamList} from './types';
+import FeedScreen from './Feed/FeedScreen';
 import AddScreen from './Add/AddScreen';
+import MovieScreen from './Movie/MovieScreen';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -52,12 +52,12 @@ function MainTab() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="Movie"
+        component={MovieScreen}
         options={{
-          title: 'My Profile',
+          title: 'Movie',
           tabBarIcon: ({color, size}) => (
-            <MaterialIcons name="person" color={color} size={size} />
+            <MaterialIcons name="local-movies" color={color} size={size} />
           ),
         }}
       />

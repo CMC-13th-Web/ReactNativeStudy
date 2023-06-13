@@ -17,5 +17,8 @@
   - [x] ios
   - [x] android
 - [ ] #3 영화 포스터 무한스크롤 구현하기 (선택)
-  - [ ] react-query 이용
-  - [ ] 상세 페이지 구현하기
+  - [x] HomeScreen 제작
+    - [x] MovieCard Component 제작
+  - [x] DetailScreen 제작
+  - [ ] react-query 설치, api 정의
+  - [ ] 무한 스크롤 구현
