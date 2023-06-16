@@ -8,13 +8,9 @@ export const useGetMovies = () => {
     {
       getNextPageParam: (_, allPages) => {
         return allPages.length * 8;
-        // const nextPage = lastPage.data.page_number + 1;
-        // // return nextPage > lastPage.data.page_number ? undefined : nextPage;
-        // return nextPage;s
       },
     },
   );
 
-  console.log(data, 'data');
   return data;
 };
