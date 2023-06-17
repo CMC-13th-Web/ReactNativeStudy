@@ -1,0 +1,24 @@
+## 기능 구현사항
+
+- [ ] #1 카메라 기능 사용하기
+  - [x] `react-native-permissions` 이용하여 카메라, 사진첩 권한 요청
+  - [ ] AddScreen
+    - [x] 퍼블리싱
+    - [x] `react-native-image-crop-picker` 설치
+    - [x] 업로드 상태 스토어 제작
+    - [x] 카메라 버튼
+      - [x] 카메라 촬영 기능 제작
+      - [x] CropScreen
+    - [x] 갤러리 버튼
+      - [x] 앨범에서 사진 선택 기능 제작
+      - [x] CropScreen
+    - [x] FeedScreen grid 형태로 제작
+- [x] #2 `react-native-splash-screen` 이용하여 스플래쉬 이미지 넣기
+  - [x] ios
+  - [x] android
+- [ ] #3 영화 포스터 무한스크롤 구현하기 (선택)
+  - [x] HomeScreen 제작
+    - [x] MovieCard Component 제작
+  - [x] DetailScreen 제작
+  - [x] react-query 설치, api 정의
+  - [x] 무한 스크롤 구현
