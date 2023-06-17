@@ -1,13 +1,23 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { CompositeNavigationProp, NavigationContainer } from '@react-navigation/native';
 import { RecoilRoot } from 'recoil';
-import HomeStack from './src/components/HomeStack';
+import SplashScreen from 'react-native-splash-screen';
+import MainStack, { MainStackNavigationProp } from './src/navigations/MainStack';
+import { BottomTabNavigationProps } from './src/navigations/BottomTab';
+
+export type MainNavigationProp = CompositeNavigationProp<MainStackNavigationProp, BottomTabNavigationProps>
 
 export default function App(): JSX.Element {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
+
   return (
     <RecoilRoot>
       <NavigationContainer>
-        <HomeStack />
+        <MainStack />
       </NavigationContainer >
     </RecoilRoot>
   );

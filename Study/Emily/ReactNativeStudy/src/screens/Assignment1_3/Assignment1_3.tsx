@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { countState } from '../../recoil/atoms/count';
-import { styles } from './Assignment1_3_StyleSheet';
+import { styles } from './Assignment1_3.style';
 
 export default function Assignment1_3() {
   const count = useRecoilValue(countState);

@@ -1,13 +1,13 @@
 import { Text, Pressable } from 'react-native'
 import React from 'react'
-import { styles } from './KaKaoButtonStyleSheet';
+import { styles } from './KakaoButton.style';
 
 type Props = {
   text: string;
   onPress: Function;
 }
 
-export default function KaKaoButton({ text, onPress }: Props) {
+export default function KakaoButton({ text, onPress }: Props) {
   return (
     <Pressable
       style={styles.button}
