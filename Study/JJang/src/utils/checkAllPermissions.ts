@@ -1,11 +1,13 @@
+import {Platform} from 'react-native';
 import {check, PERMISSIONS} from 'react-native-permissions';
-
-type OSType = 'android' | 'ios';
+import {
+  requestAndroidPermissions,
+  requestiOSPermissions,
+} from './requestAllPermissions';
 
 //1. 권한 체크
-export const checkAllPermissions = async (os: OSType): Promise<boolean> => {
-  let isChecked = true;
-  if (os === 'android') {
+export const checkAllPermissions = async (): Promise<void> => {
+  if (Platform.OS === 'android') {
     await Promise.all([
       check(PERMISSIONS.ANDROID.CAMERA),
       check(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE),
@@ -16,7 +18,7 @@ export const checkAllPermissions = async (os: OSType): Promise<boolean> => {
         data.map(value => {
           if (value !== 'granted') {
             if (value !== 'blocked') {
-              isChecked = false;
+              requestAndroidPermissions();
             }
           }
         });
@@ -32,11 +34,10 @@ export const checkAllPermissions = async (os: OSType): Promise<boolean> => {
     ])
       .then(data => {
         console.log('check permissions(ios) result : ', data);
-        // console.log('data[3] (APP_TRACKING_TRANSPARENCY) : ', data[3]);
         data.map(value => {
           if (value !== 'granted') {
             if (value !== 'blocked' && value !== 'unavailable') {
-              isChecked = false;
+              requestiOSPermissions();
             }
           }
         });
@@ -44,9 +45,6 @@ export const checkAllPermissions = async (os: OSType): Promise<boolean> => {
       .catch(e => {
         console.log(e);
       })
-      .finally(() => {
-        console.log('isChecked', isChecked);
-      });
+      .finally(() => {});
   }
-  return isChecked; // TODO 리턴 받은 체크값으로 체크 상태 업데이트 해 주기
 };
