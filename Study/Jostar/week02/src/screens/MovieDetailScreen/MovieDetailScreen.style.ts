@@ -49,6 +49,7 @@ const ContentText = styled.Text`
 `;
 
 const Content = styled.Text`
+  min-width: 200px;
   color: black;
 `;
 

@@ -10,7 +10,13 @@ import { useMovieQuery } from "./useMovieQuery";
 import { server } from "../../mocks/server";
 import { GET_MOVIE_BY_PAGE_NUMBER } from "constants/apiUrls";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 const Wrapper = ({ children }: any) => {
   return (
@@ -19,14 +25,26 @@ const Wrapper = ({ children }: any) => {
 };
 describe("useMovieQuery 테스트", () => {
   test("useMovieQuery 정상동작 확인 테스트", async () => {
+    server.use(
+      rest.get(
+        `${process.env.REACT_APP_API_URL}${GET_MOVIE_BY_PAGE_NUMBER(1)}`,
+        (req, res, ctx) => {
+          return res(
+            ctx.status(200),
+            ctx.json({ data: [] })
+          );
+        }
+      )
+    );
     const { result } = renderHook(
       () => useMovieQuery(),
       {
         wrapper: Wrapper,
       }
     );
-    await waitFor(() => result.current.isSuccess);
-    expect(result.current.data).toBeDefined();
+    await waitFor(() => result.current.isSuccess)
+    console.log(result.current.data)
+    expect(result.current.isSuccess).toBeTruthy()
   });
   
   
@@ -48,6 +66,6 @@ describe("useMovieQuery 테스트", () => {
       }
     );
     await waitFor(() => result.current.isError);
-    expect(result.current.isError).toBeFalsy();
+    expect(result.current.data).not.toBeDefined()
   });
 })
