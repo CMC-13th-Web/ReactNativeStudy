@@ -6,14 +6,10 @@
  */
 
 import React from 'react';
-import {Text} from 'react-native';
+import {Home} from './screens/Home';
 
 const App = () => {
-  return (
-    <>
-      <Text>week3</Text>
-    </>
-  );
+  return <Home />;
 };
 
 export default App;
