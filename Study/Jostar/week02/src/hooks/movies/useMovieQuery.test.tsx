@@ -1,14 +1,12 @@
+import {
+  renderHook,
+  waitFor
+} from "@testing-library/react-native";
+import { GET_MOVIE_BY_PAGE_NUMBER } from "constants/apiUrls";
 import { rest } from "msw";
 import { QueryClient, QueryClientProvider } from "react-query";
-import {
-  fireEvent,
-  render,
-  renderHook,
-  waitFor,
-} from "@testing-library/react-native";
-import { useMovieQuery } from "./useMovieQuery";
 import { server } from "../../mocks/server";
-import { GET_MOVIE_BY_PAGE_NUMBER } from "constants/apiUrls";
+import { useMovieQuery } from "./useMovieQuery";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,11 +16,16 @@ const queryClient = new QueryClient({
   },
 });
 
-const Wrapper = ({ children }: any) => {
+interface ChildrenElement {
+  children: JSX.Element;
+}
+
+const Wrapper = ({ children }: ChildrenElement) => {
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
+
 describe("useMovieQuery 테스트", () => {
   test("useMovieQuery 정상동작 확인 테스트", async () => {
     server.use(
