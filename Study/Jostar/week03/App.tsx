@@ -1,5 +1,6 @@
 import ValidateDialog from "components/molecules/dialogs/ValidateDialog/ValidateDialog";
 import { useRef, useState } from "react";
+import GpsMapScreen from "screens/GpsMapScreen/GpsMapScreen";
 import MapScreen from "screens/MapScreen/MapScreen";
 import { Context } from "utils/Context";
 
@@ -17,7 +18,7 @@ const App = () => {
         dialogText={dialogText.current}
         handleDialog={() => setDialogShow(false)}
       />
-      <MapScreen />
+      <GpsMapScreen />
     </Context.Provider>
   );
 };

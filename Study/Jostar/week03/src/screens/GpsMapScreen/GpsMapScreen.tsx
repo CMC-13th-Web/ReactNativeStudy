@@ -10,8 +10,8 @@ import { Context } from "utils/Context";
 const GpsMapScreen = () => {
   const { setDialog } = useContext(Context);
   const [currentPosition, setCurrentPosition] = useState<Position>({
-    latitude: 0,
-    longitude: 0,
+    latitude: 37.6499635,
+    longitude: 126.945553
   });
   useEffect(() => {
     Geolocation.watchPosition(
@@ -31,7 +31,10 @@ const GpsMapScreen = () => {
       <CommonMap
         mapWidth={90}
         mapHeight={80}
-        markers={markerArr}
+        markers={[{
+          title: "현재 위치",
+          position: currentPosition
+        }]}
         initialPosition={currentPosition}
       />
     </View>
