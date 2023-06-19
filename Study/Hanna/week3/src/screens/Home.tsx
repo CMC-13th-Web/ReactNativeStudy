@@ -1,7 +1,7 @@
 import Geolocation from '@react-native-community/geolocation';
 import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 export const Home = ({}) => {
   const [latitude, setLatitude] = useState(37);
@@ -36,8 +36,16 @@ export const Home = ({}) => {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-          showsUserLocation={true}
-        />
+          showsUserLocation={true}>
+          <Marker
+            coordinate={{
+              latitude: latitude,
+              longitude: longitude,
+            }}
+            title="current position"
+            description="this is current position"
+          />
+        </MapView>
       </View>
     </>
   );
