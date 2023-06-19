@@ -12,6 +12,7 @@ export const checkAllPermissions = async (): Promise<void> => {
       check(PERMISSIONS.ANDROID.CAMERA),
       check(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE),
       check(PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE),
+      check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION),
     ])
       .then(data => {
         console.log('check permissions(android)', data);
@@ -31,6 +32,7 @@ export const checkAllPermissions = async (): Promise<void> => {
     await Promise.all([
       check(PERMISSIONS.IOS.CAMERA),
       check(PERMISSIONS.IOS.PHOTO_LIBRARY),
+      check(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE),
     ])
       .then(data => {
         console.log('check permissions(ios) result : ', data);
