@@ -1,6 +1,6 @@
 ## 기능 구현사항
 
-- [ ] #1 지도 기능 사용하기
+- [x] #1 지도 기능 사용하기
   - [x] `react-native-permissions` 이용하여 위치 권한 허용
   - [x] `react-native-geolocation-service` 이용하여 현재 위도, 경도 가져오기
   - [x] `react-native-nmap` 설치
