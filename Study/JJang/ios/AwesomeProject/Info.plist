@@ -74,5 +74,7 @@
 	<string>$(PRODUCT_NAME) needs access to your Camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) needs access to your Photo Library.</string>
+	<key>NMFClientId</key>
+    <string>03y4pc1mn0</string>
 </dict>
 </plist>

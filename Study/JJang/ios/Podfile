@@ -29,6 +29,7 @@ target 'AwesomeProject' do
 
   permissions_path = '../node_modules/react-native-permissions/ios'
 
+  pod 'NMapsMap','3.16.0'
   pod 'Permission-AppTrackingTransparency', :path => "#{permissions_path}/AppTrackingTransparency"
   pod 'Permission-BluetoothPeripheral', :path => "#{permissions_path}/BluetoothPeripheral"
   pod 'Permission-Calendars', :path => "#{permissions_path}/Calendars"

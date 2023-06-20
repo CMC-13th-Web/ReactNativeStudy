@@ -6148,6 +6148,11 @@ react-native-gradle-plugin@^0.71.18:
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.18.tgz"
   integrity sha512-7F6bD7B8Xsn3JllxcwHhFcsl9aHIig47+3eN4IHFNqfLhZr++3ElDrcqfMzugM+niWbaMi7bJ0kAkAL8eCpdWg==
 
+react-native-nmap@^0.0.66:
+  version "0.0.66"
+  resolved "https://registry.yarnpkg.com/react-native-nmap/-/react-native-nmap-0.0.66.tgz#caea39b1af54d4e46c4313c21130986d3adea3fc"
+  integrity sha512-+XMJOqn4zZ6PWO0UH478yj0b9PjYGHQcLUd0W5gJQ3DqGeJEb3vvWVDMbkzcuHsh59hkhGPsE9Q6pZkXxKsYtQ==
+
 react-native-permissions@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.8.0.tgz#7c1f75ae126c7d0b863eec9d2f5cd93ff8ad8310"

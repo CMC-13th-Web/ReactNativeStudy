@@ -77,6 +77,7 @@ PODS:
     - hermes-engine/Pre-built (= 0.71.8)
   - hermes-engine/Pre-built (0.71.8)
   - libevent (2.1.12)
+  - NMapsMap (3.16.0)
   - OpenSSL-Universal (1.1.1100)
   - Permission-AppTrackingTransparency (3.8.0):
     - RNPermissions
@@ -367,6 +368,9 @@ PODS:
   - React-jsinspector (0.71.8)
   - React-logger (0.71.8):
     - glog
+  - react-native-nmap (0.0.66):
+    - NMapsMap
+    - React
   - react-native-safe-area-context (4.5.3):
     - RCT-Folly
     - RCTRequired
@@ -500,6 +504,7 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
+  - NMapsMap (= 3.16.0)
   - OpenSSL-Universal (= 1.1.1100)
   - Permission-AppTrackingTransparency (from `../node_modules/react-native-permissions/ios/AppTrackingTransparency`)
   - Permission-BluetoothPeripheral (from `../node_modules/react-native-permissions/ios/BluetoothPeripheral`)
@@ -536,6 +541,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-nmap (from `../node_modules/react-native-nmap`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -570,6 +576,7 @@ SPEC REPOS:
     - FlipperKit
     - fmt
     - libevent
+    - NMapsMap
     - OpenSSL-Universal
     - SocketRocket
     - YogaKit
@@ -653,6 +660,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-nmap:
+    :path: "../node_modules/react-native-nmap"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -711,6 +720,7 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 47986d26692ae75ee7a17ab049caee8864f855de
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  NMapsMap: a2593320fca2bb09e521c05b4dffee4da42e96ed
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   Permission-AppTrackingTransparency: 7a48e816f801d10f2402c5b4edbe620ad8a412d9
   Permission-BluetoothPeripheral: 2d2d32c4651752655c19345abbb45ad15651f987
@@ -745,6 +755,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 747911ab5921641b4ed7e4900065896597142125
   React-jsinspector: c712f9e3bb9ba4122d6b82b4f906448b8a281580
   React-logger: 342f358b8decfbf8f272367f4eacf4b6154061be
+  react-native-nmap: cfcc5402746040494c544ea90a6062f49505acdf
   react-native-safe-area-context: b8979f5eda6ed5903d4dbc885be3846ea3daa753
   React-perflogger: d21f182895de9d1b077f8a3cd00011095c8c9100
   React-RCTActionSheet: 0151f83ef92d2a7139bba7dfdbc8066632a6d47b
@@ -767,6 +778,6 @@ SPEC CHECKSUMS:
   Yoga: 065f0b74dba4832d6e328238de46eb72c5de9556
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 3c0877f10f8d6fcc0cbc97655f3dd10961984a9b
+PODFILE CHECKSUM: 7a973dc238e152fa31458804e312ff49c58aa513
 
 COCOAPODS: 1.12.1

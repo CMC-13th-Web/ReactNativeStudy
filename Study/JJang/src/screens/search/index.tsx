@@ -1,10 +1,18 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+
+import NaverMapView, {Marker} from 'react-native-nmap';
 
 export const SearchScreen = () => {
+  const P0 = {latitude: 37.564362, longitude: 126.977011};
+
   return (
-    <View>
-      <Text>Search</Text>
-    </View>
+    <NaverMapView
+      style={{width: '100%', height: '100%'}}
+      showsMyLocationButton={true}
+      center={{...P0, zoom: 16}}
+      onCameraChange={e => console.warn('onCameraChange', JSON.stringify(e))}
+      onMapClick={e => console.warn('onMapClick', JSON.stringify(e))}>
+      <Marker coordinate={P0} onClick={() => console.warn('onClick! p0')} />
+    </NaverMapView>
   );
 };
