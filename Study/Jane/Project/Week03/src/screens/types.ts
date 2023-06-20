@@ -23,6 +23,9 @@ export type MainTabRouteProp = RouteProp<RootStackParamList, 'MainTab'>;
 /* RootStack */
 export type RootStackParamList = {
   MainTab: MainTabNavigationScreenParams;
+  Lock: {
+    type: 'LOCK' | 'UNLOCK';
+  };
 };
 export type RootStackNavigationProp =
   NativeStackNavigationProp<RootStackParamList>;
