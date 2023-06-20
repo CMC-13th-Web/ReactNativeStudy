@@ -4,5 +4,6 @@ module.exports = {
     "^.+\\.[jt]sx?$": "babel-jest",
   },
   // transformIgnorePatterns: ["node_modules/?!(react-icons)"],
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+  // setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 };
