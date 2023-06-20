@@ -1,11 +1,10 @@
-import CommonMap from "components/organizations/maps/CommonMap/CommonMap";
-import React, { useContext, useEffect, useState } from "react";
-import { View } from "react-native";
 import Geolocation from "@react-native-community/geolocation";
-import { gpsMapScreenStyles } from "./GpsMapScreen.style";
+import CommonMap from "components/organizations/maps/CommonMap/CommonMap";
+import { useContext, useEffect, useState } from "react";
+import { View } from "react-native";
 import { Position } from "types/apps/map";
-import { markerArr } from "data/maps";
 import { Context } from "utils/Context";
+import { gpsMapScreenStyles } from "./GpsMapScreen.style";
 
 const GpsMapScreen = () => {
   const { setDialog } = useContext(Context);
@@ -14,7 +13,7 @@ const GpsMapScreen = () => {
     longitude: 126.945553
   });
   useEffect(() => {
-    Geolocation.watchPosition(
+    const gps = Geolocation.watchPosition(
       (position) => {
         setCurrentPosition({
           latitude: position.coords.latitude,
@@ -25,6 +24,7 @@ const GpsMapScreen = () => {
         setDialog(error.message, true);
       }
     );
+    return Geolocation.clearWatch(gps);
   }, []);
   return (
     <View style={gpsMapScreenStyles.container}>
